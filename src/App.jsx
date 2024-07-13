@@ -1,16 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { googleLogout, useGoogleLogin, GoogleLogin } from "@react-oauth/google";
+import { googleLogout, useGoogleLogin } from "@react-oauth/google";
 import axios from "axios";
-// import { jwtDecode } from "jwt-decode";
 
 function App() {
   const [user, setUser] = useState([]);
   const [profile, setProfile] = useState(null);
 
   const login = useGoogleLogin({
-    onSuccess: (codeResponse) => {
-      setUser(codeResponse);
-    },
+    onSuccess: (codeResponse) => setUser(codeResponse),
     onError: (error) => console.log("Login Failed:", error),
   });
 
@@ -39,8 +36,6 @@ function App() {
     setProfile(null);
   };
 
-  console.log(profile);
-
   return (
     <div>
       <h2>React Google Login</h2>
@@ -57,7 +52,7 @@ function App() {
           <button onClick={logOut}>Log out</button>
         </div>
       ) : (
-        <GoogleLogin onClick={login}>Sign in with Google 🚀 </GoogleLogin>
+        <button onClick={login}>Sign in with Google 🚀 </button>
       )}
     </div>
   );
