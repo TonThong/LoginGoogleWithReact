@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { googleLogout, useGoogleLogin } from "@react-oauth/google";
 import axios from "axios";
+import "./App.css";
 
 function App() {
   const [user, setUser] = useState([]);
@@ -37,7 +38,7 @@ function App() {
   };
 
   return (
-    <div>
+    <div className="wrapper">
       <h2>React Google Login</h2>
       <br />
       <br />
