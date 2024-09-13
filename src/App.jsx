@@ -39,7 +39,7 @@ function App() {
 
   return (
     <div className="wrapper">
-      <h2>React Google Login</h2>
+      <h2>React Google Login1 </h2>
       <br />
       <br />
       {profile ? (
